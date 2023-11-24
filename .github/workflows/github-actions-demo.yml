@@ -1,0 +1,13 @@
+name: Calculator testing with unittest
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - run: python -m unittest testes_calculadora.py
