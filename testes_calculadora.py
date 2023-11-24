@@ -24,5 +24,9 @@ class CalculadoraTest(unittest.TestCase):
         resultado = self.calculadora.divisao(1, 2)
         self.assertEqual(resultado, 0.5)
 
+    def test_divisao_por_zero(self):
+        with self.assertRaises(ValueError):
+            self.calculadora.divisao(1, 0)
+
 if __name__ == "__main__":
     unittest.main()
